@@ -19,7 +19,7 @@ module sorting_mod
                         real(dp):: rand
                         integer, intent(in):: lower, upper
                         integer, intent(out):: guess
-                        call random_number(rand)
+                        call random_number(rand)                                ! call intrinsic subroutine
                         guess = lower + floor((upper + 1 - lower)*rand)
                 end subroutine get_rand_num
                 subroutine switch(a1, a2)

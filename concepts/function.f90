@@ -6,7 +6,7 @@ integer function i_divide(x,y) result(ans)      ! external function, returns ans
 end function i_divide
 
 real function r_divide(x,y) result(ans)
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64    ! double precision
         implicit none
         real, intent(in) :: x,y
         ans = x/y
@@ -14,7 +14,7 @@ real function r_divide(x,y) result(ans)
 end function r_divide
 
 program maker
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64    ! double precision
         implicit none
 
         real :: a,b,rans                        ! declaretions

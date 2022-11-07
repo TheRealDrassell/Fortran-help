@@ -1,5 +1,5 @@
 program test
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64            !double precision
         implicit none
         real(dp), dimension(5):: array
         real(dp), external:: inc        !declare external function
@@ -15,10 +15,10 @@ program test
 
         contains                               ! contain block for subroutine, needs to be at the end for the program
         subroutine populate(array)
-                use iso_fortran_env, only:dp=>real64
+                use iso_fortran_env, only:dp=>real64            ! double precision
                 implicit none
 
-                real(dp), dimension(:),intent(out):: array
+                real(dp), dimension(:),intent(out):: array      ! we want to return an array of unkown size when called
                 integer:: n,i
 
                 n = size(array)
@@ -29,7 +29,7 @@ program test
 end program test
 
 real(dp) function inc(a) result(b)              ! external function
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64    ! double precision
         implicit none
         real(dp)::a
         b = a+1

@@ -5,14 +5,14 @@ integer function i_divide(x,y) result(ans)              ! external functions
         return
 end function i_divide
 real(dp) function r_divide(x,y) result(ans)
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64            ! double precision
         implicit none
         real(dp), intent(in) :: x,y
         ans = x/y
         return
 end function r_divide
 program doublecall
-        use iso_fortran_env, only:dp=>real64
+        use iso_fortran_env, only:dp=>real64            ! double precision
         implicit none
         real(dp) :: a,b, rans
         integer  :: c,d, ians
@@ -22,7 +22,7 @@ program doublecall
                         integer, intent(in) :: x,y
                 end function i_divide
                 real(dp) function r_divide(x,y) result(ans)
-                        use iso_fortran_env, only: dp=>real64
+                        use iso_fortran_env, only: dp=>real64   ! double precision
                         implicit none
                         real(dp), intent(in) :: x,y
                 end function r_divide
